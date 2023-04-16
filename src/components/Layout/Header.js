@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink,Link } from "react-router-dom";
+import 'animate.css';
 
 const Header = () => {
   return (
@@ -18,7 +19,7 @@ const Header = () => {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <Link to='/' className="navbar-brand ">
+            <Link to='/' className="navbar-brand animate__headShake animate__animated">
            🛒Ecommerce Store
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
