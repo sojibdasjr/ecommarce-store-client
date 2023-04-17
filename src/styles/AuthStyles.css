@@ -10,7 +10,7 @@
   }
 
   .form-container form {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 10px 5px 15px;
     padding: 20px;
     background-color: #fff;
   }
@@ -39,4 +39,75 @@
   .form-container form button:hover {
     border: 1px solid black;
     background: #000000;
+  }
+
+
+  /* extra css */
+  .dev_title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dev_accoutn{
+    background-color: var(--form-color);
+    height: 391px;
+    width: 291px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .dev_accoutn2{
+    background-color: var(--form-color);
+    height: 232px;
+    width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .dev_accoutn2 h1{
+    text-align: center;
+    margin-top: 70px;
+    color: white;
+  }
+  .dev_accoutn2 h3{
+    text-align: center;
+    outline: 1px solid white;
+    width: 255px;
+    margin-left: 20px;
+    border-radius: 20px;
+    color: white;
+  }
+
+  .dev_accoutn h1{
+    text-align: center;
+    margin-top: 130px;
+    color: white;
+  }
+  .dev_accoutn h3{
+    text-align: center;
+    outline: 1px solid white;
+    width: 250px;
+    margin-left: 20px;
+    border-radius: 20px;
+    color: white;
+  }
+
+  .sing_up{
+    text-align: center;
+    font-size: 40px;
+  }
+  .sing_up :first-child{
+    background-color: var(--form-color);
+    border-radius: 50%;
+    font-size: 60px;
+    padding: 10px;
+    color: white;
+  }
+
+  @media screen and (max-width: 800px) {
+    .dev_accoutn{
+      display: none;
+    }
+    .dev_accoutn2{
+      display: none;
+    }
   }

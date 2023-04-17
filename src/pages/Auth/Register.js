@@ -2,7 +2,8 @@ import React ,{useState} from "react";
 import Layout from "../../components/Layout/Layout";
 import  toast from 'react-hot-toast';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom'
+import {NavLink, useNavigate} from 'react-router-dom'
+import { BsFillPersonFill } from "react-icons/bs";
 import "../../styles/AuthStyles.css";
 
 export const Register = () => {
@@ -34,7 +35,15 @@ export const Register = () => {
   return (
     <Layout title={'Register -Ecommerce store'}>
       <div className="form-container" style={{ minHeight: "82vh" }}>
-      <h4 className="title">REGISTER FORM</h4>
+      <div className="sing_up">
+      <BsFillPersonFill/>
+      <h4 className="title">Register Now</h4>
+      </div>
+        <div className="dev_title">
+          <div className="dev_accoutn">
+          <h1>Welcome Back</h1>
+          <h3>Create Accoutn</h3>
+          </div>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <input
@@ -94,7 +103,9 @@ export const Register = () => {
           <button type="submit" className="btn btn-primary">
             REGISTER
           </button>
+          <p className="mt-2">Already registered <NavLink to='/login'>sign in?</NavLink></p>
         </form>
+        </div>
       </div>
     </Layout>
   );
