@@ -2,33 +2,29 @@ import React ,{useState} from "react";
 import Layout from "../../components/Layout/Layout";
 import  toast from 'react-hot-toast';
 import axios from 'axios';
-import {NavLink, useNavigate, useLocation} from 'react-router-dom'
+import {NavLink, useNavigate} from 'react-router-dom'
 import "../../styles/AuthStyles.css";
 import { BsFillPersonFill } from "react-icons/bs";
-import { useAuth } from "../../context/auth";
 
 
- const Login = () => {
+const ForgotPassword = () => {
     const [email, setEmail]= useState('');
-    const [password, setPassword]= useState('');
-    const [auth, setAuth] = useAuth("");
+    const [newPassword, setNewPassword]= useState('');
+    const [answer, setAnswer]= useState('');
     const navigate = useNavigate();
-    const location = useLocation();
 
         //from submit function 
         const handleSubmit = async(e) =>{
             e.preventDefault();
             try {
-              const res = await axios.post("/api/v1/auth/login", {email, password});
-              if(res && res.data.success){
-                toast.success(res.data && res.data.message);
-                setAuth({
-                  ...auth,
-                  user:res.data.user,
-                  token:res.data.token,
-                });
-                localStorage.setItem("auth", JSON.stringify(res.data));
-                navigate(location.state ||'/');
+              const res = await axios.post("/api/v1/auth/forgot-password", {
+                email, 
+                newPassword,
+            answer
+        });
+              if( res && res.data.success){
+                toast.success( res.data && res.data.message);
+                navigate('/login');
               }
               else{
                 toast.error(res.data.message);
@@ -39,11 +35,11 @@ import { useAuth } from "../../context/auth";
             }
         };
   return (
-    <Layout title={'Login -Ecommerce store'}>
+    <Layout title={"Forgot Password -Ecommerce Store"}>
     <div className="form-container" style={{ minHeight: "82vh" }}>
     <div className="sing_up">
       <BsFillPersonFill/>
-      <h4 className="title">Login Now</h4>
+      <h4 className="title">Reset Password</h4>
       </div>
       <div className="dev_title">
       <div className="dev_accoutn2">
@@ -64,29 +60,35 @@ import { useAuth } from "../../context/auth";
         </div>
         <div className="mb-3">
           <input
+            type="text"
+            value={answer}
+            onChange={(e)=> setAnswer(e.target.value)}
+            className="form-control"
+            id="exampleInputEmail1"
+            placeholder="Enter Your Mother Name"
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <input
             type="password"
-            value={password}
-            onChange={(e)=> setPassword(e.target.value)}
+            value={newPassword}
+            onChange={(e)=> setNewPassword(e.target.value)}
             className="form-control"
             id="exampleInputPassword1"
-            placeholder="Enter Your Password Here"
+            placeholder="Enter Your New Password Here"
             required
           />
         </div>
         <button type="submit" className="btn btn-primary">
-          LOGIN
+          Reset
         </button>
-        <div>
-        <button type="button" className="btn btn-primary my-1" onClick={()=>{navigate('/forgot-password')}} >
-          Forgot Password
-        </button>
-        </div>
-        <p className="mt-2">Already have an Account <NavLink to='/register'>register ?</NavLink></p>
+        <p className="mt-2">Already have an Account <NavLink to='/login'>Login?</NavLink></p>
       </form>
       </div>
     </div>
-  </Layout>
+    </Layout>
   )
 }
 
-export default Login
+export default ForgotPassword
