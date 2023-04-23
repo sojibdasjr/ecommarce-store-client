@@ -1,11 +1,11 @@
-import React from 'react';
-import Layout from '../components/Layout/Layout';
+import React from "react";
+import Layout from "../components/Layout/Layout";
 import { BiMailSend, BiPhoneCall, BiSupport } from "react-icons/bi";
 
 const Contact = () => {
-    return (
-        <Layout title={"Contact us - Ecommer store"}>
-            <div className="row contactus ">
+  return (
+    <Layout title={"Contact us - Ecommer store"}>
+      <div className="row contactus ">
         <div className="col-md-6 ">
           <img
             src="https://baotridienmay.com/wp-content/uploads/2020/12/customer-care.jpg"
@@ -30,8 +30,8 @@ const Contact = () => {
           </p>
         </div>
       </div>
-        </Layout>
-    );
+    </Layout>
+  );
 };
 
 export default Contact;
