@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Poppins:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Poppins:wght@300;400&display=swap");
 
-:root{
-  --footer--font-color:#ffff;
+:root {
+  --footer--font-color: #ffff;
   --form-color: #7090e9;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,47 +17,45 @@
 /* navbar css */
 /* root css custom class */
 
-.navbar{
-  font-family: 'Poppins', sans-serif;
+.navbar {
+  font-family: "Poppins", sans-serif;
   font-size: 17px;
   line-height: 26px;
   text-transform: uppercase;
-  box-shadow: 0 2px 2px -2px rgba(0,0,0,.25);
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.25);
 }
-.active{
+.active {
   border-bottom: 1px solid red;
 }
 
-.navbar-brand{
+.navbar-brand {
   font-weight: 700;
-  font-family: 'roboto', 'sans-serfi';
+  font-family: "roboto", "sans-serfi";
   letter-spacing: 3px;
 }
 
-
 /* footer css */
 
-.footer{
+.footer {
   color: var(--footer--font-color);
   padding: 25px;
   background: black;
 }
 
-.footer a{
+.footer a {
   color: var(--footer--font-color);
   text-decoration: none;
   padding: 10px;
 }
 
-.footer a:hover{
+.footer a:hover {
   color: red;
   border-bottom: 1px solid gray;
 }
 
-
 /* page not found css */
 
-.pnf{
+.pnf {
   display: flex;
   min-height: 65vh;
   flex-direction: column;
@@ -65,16 +63,16 @@
   justify-content: center;
 }
 
-.pnf-title{
+.pnf-title {
   font-size: 100px;
   font-weight: 700;
 }
 
-.pnf-heading{
+.pnf-heading {
   font-weight: normal;
 }
 
-.pnf-btn{
+.pnf-btn {
   color: black;
   border: 1px solid black;
   text-decoration: none;
@@ -82,7 +80,7 @@
   margin-top: 10px;
 }
 
-.pnf-btn:hover{
+.pnf-btn:hover {
   background: black;
   color: white;
   transition: 0.5s;
@@ -114,3 +112,20 @@
   color: white;
 }
 
+.product-link {
+  text-decoration: none;
+  color: black !important ;
+}
+
+.dev_cursor {
+  cursor: pointer;
+}
+
+.similer_product {
+  font-family: "Playfair Display", serif;
+}
+
+.cat_hover:hover {
+  margin-left: 10px;
+  transition: 0.3s;
+}
